@@ -122,6 +122,12 @@ public class World {
             food.getAI().appear();
             this.props.add(this.food);
         }
+        else if(isFood(x, y) && food.getAI().isEmerge() == true){
+            this.food.modifyHP(-this.food.maxHP());
+        }
+        else if(isPower(x,y) && power.getAI().isEmerge() == true){
+            this.power.modifyHP(-this.power.maxHP());
+        }
         else if(isPower(x,y) && power.getAI().isEmerge() == false){
             power.getAI().appear();
             this.props.add(this.power);
